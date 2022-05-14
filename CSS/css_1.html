@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+        @import url("./css1_1.css");
+        /* 属性选择器 */
+        div[id="a"] {
+            color:red;
+        }
+        /* 伪类选择器，当有权重更高的样式时被覆盖 */
+        .bb:hover{
+            color:red;
+        }
+        #b{
+            color: green;
+        }
+        /* 伪元素选择器 */
+        #c::after{
+            content:"after";
+            color: red;
+        }
+        #c::before{
+            content:"before";
+            color: red;
+        }
+        /* 相邻兄弟选择器 */
+        #d + p{
+            color: red;
+        }
+        /* 后代选择器 */
+        #e span{
+            color: red;
+        }
+        /* 选择器列表 */
+        #a, #b, #c{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="a">aaa</div>
+<div id="b" class="bb">bbb</div>
+<div id="c">ccc</div>
+<div id="d">ddd</div>
+<p>p1</p>
+<p>p2</p>
+<div id="e"><span>后代eee</span></div>
+<!-- 内联样式 -->
+<div id="f" style="color: red;">fff</div>
+</body>
+<div></div>
+
+<script>
+    let a = document.querySelector("#a").innerText="aaa";
+</script>
+</html>

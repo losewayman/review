@@ -23,3 +23,47 @@ DTD 是什么？追溯到很久以前，SGML 是一种古老的标记语言，HT
 CSS1Compat: 标准模式，浏览器以 W3C 的标准解析渲染页面。在标准模式中，浏览器以其支持的最高标准呈现页面。
 BackCompat: 怪异模式/混杂模式，浏览器使用自己的怪异模式解析渲染页面。在怪异模式中，页面以一种比较宽松的向后兼容的方式显示。  
 html 文档不指定 DTD 浏览器就会以 BackCompat 模式解析文档。
+
+### 3. HTML 头部标签
+
+\<head>标签包含所有的头部标签元素，可以添加到头部的元素标签有 \<title>, \<style>, \<meta>, \<link>, \<script>, \<noscript> 和 \<base>。
+
+#### 1.\<title>标签
+
+定义文档的标题
+
+#### 2. \<base>标签
+
+base 标签有两个属性，href 和 target。
+生效的标签包括\<a>、\<img>、\<link>、\<form>  
+一般 base 标签放在 head 标签首位，这样也会对 head 内其他标签生效
+href 为页面上所有的<font color="red">相对链接(路径)</font>规定默认的 URL。
+target 指定链接打开的方式，优先级低，使用链接的地方没指定时才使用。
+
+#### 3. \<mata>标签
+
+meta 标签提供有关页面的元信息，meta 标签的属性定义了与文档相关联的名称/值对。 常见属性：
+name：属性通常与 content 属性共同构成一个名称/值对。常见的有 keywords(关键字)，author(作者)，description(网站介绍)viewport(css 移动设备适配规范)等等。
+content: 定义与 http-equiv 或 name 属性相关的元信息。  
+http-equiv: 把 content 属性关联到 HTTP 头部,所有允许的值都是特定 HTTP 头部的名称。  
+charset: 规定 HTML 文档的字符编码。
+
+当 name 为 viewport（视口）时 content 对应的一些值
+
+- width,值为正整数或“device-width”(设备宽度)，定义 viewport 的宽度，如果值为正整数，则单位为像素。
+- initial-scale，定义设备宽度与 viewport 大小之间的缩放比例。取值范围 0.0-10.0，一般取 1.0。
+- maximum-scale，定义缩放的最大值。
+- minimum-scale，定义缩放的最小值。
+- user-scalable，是否可以缩放当前页面，yes 是可以，no 是禁止。默认 yes.
+
+#### 4. link 标签
+
+HTML 外部资源链接元素 (\<link>) 规定了当前文档与外部资源的关系。
+常见属性
+
+- href: 此属性指定被链接资源的 URL。 URL 可以是绝对的，也可以是相对的。
+- rel: 此属性命名链接文档与当前文档的关系。值必须是[链接类型](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Link_types),常见的值有“stylesheet”,“icon”,“apple-touch-icon”,“prefetch”,“preload”。
+- type: 这个属性被用于定义链接的内容的类型。这个属性的值应该是像 text/html，text/css 等 MIME 类型。
+- sizes: 只有在 rel 为 icon 时生效,这个属性定义了包含相应资源的可视化媒体中的 icons 的大小。
+- as: 该属性仅在\<link>元素设置了 rel="preload" 或者 rel="prefetch" 时才能使用。它规定了<link>元素加载的内容的类型。值有“audio”，“image”，“font”，“script”，“vodeo”等。
+- media：这个属性规定了外部资源适用的媒体类型。它的值必须是"媒体查询"。这个属性使得用户代理能选择最适合设备运行的媒体类型。
