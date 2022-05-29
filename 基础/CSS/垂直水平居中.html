@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+        body{
+            background-color: #fafafa;
+            padding: 0 40px;
+        }
+        .wrapper{
+            background-color: #ffffff;
+            border: 1px solid #e3e0e0;
+            margin-bottom: 80px;
+        }
+        .wrapper-title{
+            font-size: 18px;
+            font-weight: 600;
+            padding:15px 20px;
+            border-bottom: 1px solid #e3e0e0;
+        }
+        .wrapper-content{
+            background-color: #fafafa;
+            min-height: 40px;
+            margin: 20px;
+            overflow: hidden;
+        }
+        .father{
+            width:400px;
+            height: 100px;
+            background-color: burlywood;
+        }
+        .son{
+            width:40px;
+            height:40px;
+            background-color: cadetblue;
+        }
+        .center-1-father{
+            position: relative;
+        }
+        .center-1-son{
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+        }
+        .center-2-father{
+            position: relative;
+        }
+        .center-2-son{
+            position: absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom: 0;
+            margin: auto;
+        }
+        .center-3-father{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .center-3-son{
+            
+        }
+        .center-4-father{
+            display: flex;
+        }
+        .center-4-son{
+            margin: auto;
+        }
+        .center-text{
+            text-align: center;
+            height: 60px;
+            line-height: 60px;
+            background-color: burlywood;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="wrapper-title">标题</div>
+        <div class="wrapper-content">
+            <!-- 内容 -->
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="wrapper-title">父相对定位，子绝对定位,子元素先向右下偏移父元素一半，再向左上偏移子元素一半</div>
+        <div class="wrapper-content">
+            <div class="father center-1-father">父
+                <div class="son center-1-son" >子</div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="wrapper-title">父相对定位，子绝对定位，子元素上下左右值相同，margin:auto;</div>
+        <div class="wrapper-content">
+            <div class="father center-2-father">父
+                <div class="son center-2-son" >子</div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="wrapper-title">使用flex</div>
+        <div class="wrapper-content">
+            <div class="father center-3-father" >
+                <div class="son center-3-son" >子</div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="wrapper-title">父元素display:flex;子元素使用margin:auto</div>
+        <div class="wrapper-content">
+            <div class="father center-4-father" >
+                <div class="son center-4-son" >子</div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="wrapper-title">文本垂直水平居中，text-align:center,line-height设置为height值。</div>
+        <div class="wrapper-content">
+            <div class="center-text" >
+                文本内容
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+</script>
+</html>

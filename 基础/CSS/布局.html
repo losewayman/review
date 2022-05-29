@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+        body{
+            background-color: #fafafa;
+            padding: 0 40px;
+        }
+        .wrapper{
+            background-color: #ffffff;
+            border: 1px solid #e3e0e0;
+            margin-bottom: 80px;
+        }
+        .wrapper-title{
+            font-size: 18px;
+            font-weight: 600;
+            padding:15px 20px;
+            border-bottom: 1px solid #e3e0e0;
+        }
+        .wrapper-content{
+            background-color: #fafafa;
+            min-height: 40px;
+            margin: 20px;
+            overflow: hidden;
+        }
+        /* --------- 1 --------- */
+        .layout-1{
+            position: relative;
+            height: 100px;
+        }
+        .layout-1-left{
+            position: absolute;
+            width: 200px;
+            left:0;
+            height: 100px;
+            background-color:bisque;
+        }
+        .layout-1-center{
+            position: absolute;
+            left:200px;
+            right: 200px;
+            height: 100px;
+            background-color: aquamarine;
+        }
+        .layout-1-right{
+            position: absolute;
+            width: 200px;
+            right:0;
+            height: 100px;
+            background-color:bisque;
+        }
+        /* --------- 2 --------- */
+        .layout-2{
+            display: flex;
+        }
+        .layout-2-left{
+            width: 200px;
+            height: 100px;
+            background-color:bisque;
+        }
+        .layout-2-center{
+            flex:1;
+            height: 100px;
+            background-color: aquamarine;
+        }
+        .layout-2-right{
+            width: 200px;
+            height: 100px;
+            background-color:bisque;
+        }
+        /* --------- 2 --------- */
+        .layout-3{
+           height: 100px;
+           overflow: hidden;
+        }
+        .layout-3-left{
+            float: left;
+            width: 200px;
+            background-color: aquamarine;
+        }
+        .layout-3-right{
+            overflow: hidden;
+            height: 100px;
+            background-color:bisque;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="wrapper-title">三栏布局：使用position:absolute;</div>
+        <div class="wrapper-content">
+            <div class="layout-1">
+                <div class="layout-1-left">left</div>
+                <div class="layout-1-center">center</div>
+                <div class="layout-1-right">right</div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="wrapper-title">三栏布局：使用flex</div>
+        <div class="wrapper-content">
+            <div class="layout-2">
+                <div class="layout-2-left">left</div>
+                <div class="layout-2-center">center</div>
+                <div class="layout-2-right">right</div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="wrapper-title">两栏布局：BFC实现,左边定宽浮动，右边bfc</div>
+        <div class="wrapper-content">
+            <div class="layout-3">
+                <div class="layout-3-left">left</div>
+                <div class="layout-3-right">right</div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+<script>
+</script>
+</html>

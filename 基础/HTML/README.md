@@ -42,8 +42,8 @@ target 指定链接打开的方式，优先级低，使用链接的地方没指�
 
 #### 3. \<mata>标签
 
-meta 标签提供有关页面的元信息，meta 标签的属性定义了与文档相关联的名称/值对。 常见属性：
-name：属性通常与 content 属性共同构成一个名称/值对。常见的有 keywords(关键字)，author(作者)，description(网站介绍)viewport(css 移动设备适配规范)等等。
+meta 标签提供有关页面的元信息，meta 标签的属性定义了与文档相关联的名称/值对。 常见属性：  
+name：属性通常与 content 属性共同构成一个名称/值对。常见的有 keywords(关键字)，author(作者)，description(网站介绍)viewport(css 移动设备适配规范)等等。  
 content: 定义与 http-equiv 或 name 属性相关的元信息。  
 http-equiv: 把 content 属性关联到 HTTP 头部,所有允许的值都是特定 HTTP 头部的名称。  
 charset: 规定 HTML 文档的字符编码。
@@ -67,3 +67,25 @@ HTML 外部资源链接元素 (\<link>) 规定了当前文档与外部资源的�
 - sizes: 只有在 rel 为 icon 时生效,这个属性定义了包含相应资源的可视化媒体中的 icons 的大小。
 - as: 该属性仅在\<link>元素设置了 rel="preload" 或者 rel="prefetch" 时才能使用。它规定了<link>元素加载的内容的类型。值有“audio”，“image”，“font”，“script”，“vodeo”等。
 - media：这个属性规定了外部资源适用的媒体类型。它的值必须是"媒体查询"。这个属性使得用户代理能选择最适合设备运行的媒体类型。
+
+#### 5. \<noscript>标签
+
+js 脚本被禁用时显示的内容，正常情况下不会展示。
+
+### 3.BFC 块格式化上下文
+
+BFC 是一个独立的容器，在这个容器的元素布局不受外部影响，也不会影响到外部布局。bfc 计算高度时会计算浮动元素的高度。
+
+#### 生成 BFC
+
+1.根元素：\<html>  
+2.浮动元素：float 值不为 none  
+3.绝对定位元素：position 为 absolute 或 fixed  
+4.行内块元素：display 值为 inline-block  
+5.overflow 值不为 visible  
+6.弹性元素：display 值为 flex
+
+#### 可解决问题
+
+1.高度塌陷问题，如给一个元素设置浮动后脱离文档流，为不影响原来布局可以在外包裹 bfc.  
+2.外边距重叠，两个盒子 margin 上下相邻，会取较大的一方。设置为 bfc 以后就不会重叠。
