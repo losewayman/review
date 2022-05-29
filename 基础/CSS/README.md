@@ -35,7 +35,8 @@
 
 #### 块级元素垂直水平居中
 
-[参考代码](./%E5%9E%82%E7%9B%B4%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD.html) 1.父元素相对定位，子元素绝对定位，子元素 top,left 各 50%，transform: translate(-50%, -50%);如果知道子元素的宽高，还可以 margin-top,margin-left 各负的子元素宽高一半。  
+[参考代码](./%E5%9E%82%E7%9B%B4%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD.html)  
+1.父元素相对定位，子元素绝对定位，子元素 top,left 各 50%，transform: translate(-50%, -50%);如果知道子元素的宽高，还可以 margin-top,margin-left 各负的子元素宽高一半。  
 2.父元素相对定位，子元素绝对定位，子元素 top,left,right,bottom 设为 0，margin:auto;  
 3.父元素设置 flex,justify-content: center;align-items: center;  
 4.父元素 display:flex;子元素使用 margin:auto;
