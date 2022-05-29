@@ -5,10 +5,10 @@
 3. 类选择权，属性选择器，伪类选择器，权重 10，格式".classname","a[href="xxx"]","a:hover"
 4. 标签选择器，伪元素选择器，权重 1
 5. 相邻兄弟选择器，后代选择器，通配符选择器，权重 0
-
-属性选择器：选择某个标签带有指定属性的元素  
-伪类选择权：添加到选择器的关键字，指定要选择的元素的特殊状态常见的有 hover，active 等  
-伪元素选择器：伪元素是一个附加至选择器末的关键词，允许你对被选择元素的特定部分修改样式。
+   [参考 demo](./%E6%A0%B7%E5%BC%8F%E9%80%89%E6%8B%A9%E5%99%A8.html)
+   属性选择器：选择某个标签带有指定属性的元素  
+   伪类选择权：添加到选择器的关键字，指定要选择的元素的特殊状态常见的有 hover，active 等  
+   伪元素选择器：伪元素是一个附加至选择器末的关键词，允许你对被选择元素的特定部分修改样式。
 
 - ::after，用来创建一个伪元素，作为已选中元素的最后一个子元素，通常会配合 content 属性来为该元素添加装饰内容。这个虚拟元素默认是行内元素。
 - ::before,同::after,不过它是作为已选中元素的第一个子元素。
@@ -35,8 +35,9 @@
 
 #### 块级元素垂直水平居中
 
-1.父元素相对定位，子元素绝对定位，子元素 top,left 各 50%，transform: translate(-50%, -50%);如果知道子元素的宽高，还可以 margin-top,margin-left 各负的子元素宽高一半。  
-2.父元素相对定位，子元素绝对定位，子元素 top,left,right,bottom 设为 0，margin:auto; 3.父元素设置 flex,justify-content: center;align-items: center;  
+[参考代码](./%E5%9E%82%E7%9B%B4%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD.html) 1.父元素相对定位，子元素绝对定位，子元素 top,left 各 50%，transform: translate(-50%, -50%);如果知道子元素的宽高，还可以 margin-top,margin-left 各负的子元素宽高一半。  
+2.父元素相对定位，子元素绝对定位，子元素 top,left,right,bottom 设为 0，margin:auto;  
+3.父元素设置 flex,justify-content: center;align-items: center;  
 4.父元素 display:flex;子元素使用 margin:auto;
 
 #### 行内元素垂直水平居中
