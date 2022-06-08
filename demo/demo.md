@@ -23,7 +23,10 @@ sds
 console.log();
 ```
 
-[graph](./Graph.js)
+链接  
+[graph](./Graph.js)  
+图片  
+![xxx](xxx)
 
 ---
 
