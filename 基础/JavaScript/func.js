@@ -84,3 +84,24 @@ function func2(fn,time){
     }
 }
 let jieliu = func2(()=>{console.log("节流")},3000)
+
+// promise.all
+Promise.newAll = function(arr){
+    if(arr[Symbol.iterator]===undefined){
+        Promise.reject(new Error('非可遍历结构'));
+    }
+    return new Promise((resolve,reject)=>{
+        let result = [];
+        for(let pro of arr){
+            Promise.resolve(pro).then((res)=>{
+                result.push(res);
+                if(arr.length===arr.length){
+                    resolve(result);
+                }
+            })
+            .catch((err)=>{
+                reject(err)
+            })
+        }
+    })
+}
